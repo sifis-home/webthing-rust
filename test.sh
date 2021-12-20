@@ -25,3 +25,11 @@ EXAMPLE_PID=$!
 sleep 5
 ./webthing-tester/test-client.py --path-prefix "/0"
 kill -15 $EXAMPLE_PID
+
+# build and test the single-thing-sifis example
+cargo build --example single-thing-sifis
+cargo run --example single-thing-sifis &
+EXAMPLE_PID=$!
+sleep 5
+./webthing-tester/test-client.py --debug
+kill -15 $EXAMPLE_PID

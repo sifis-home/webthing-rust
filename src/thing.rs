@@ -861,6 +861,7 @@ impl AvailableAction {
                     value.remove("@type");
                     value.remove("unit");
                     value.remove("title");
+                    value.remove("sifis:hazard");
                 }
             }
 

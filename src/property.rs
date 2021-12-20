@@ -19,6 +19,7 @@ pub trait Property: Send + Sync {
         description.remove("@type");
         description.remove("unit");
         description.remove("title");
+        description.remove("sifis:hazard");
 
         if description
             .get("readOnly")
