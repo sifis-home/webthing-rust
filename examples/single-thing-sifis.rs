@@ -141,7 +141,7 @@ fn make_thing() -> Arc<RwLock<Box<dyn Thing + 'static>>> {
         Some("A web connected lamp".to_owned()),
     )
     .with_context(ThingContext::from_iter([
-        (None, "https://webthings.io/schemas"),
+        (Some("webthings"), "https://webthings.io/schemas"),
         (Some("sifis"), "https://www.sifis-home.eu/schemas"),
     ]));
 
