@@ -220,8 +220,10 @@ fn make_thing() -> Arc<RwLock<Box<dyn Thing + 'static>>> {
 
     let overheated_metadata = json!({
         "description": "The lamp has exceeded its safe operating temperature",
-        "type": "number",
-        "unit": "degree celsius"
+        "data": {
+            "type": "number",
+            "unit": "degree celsius"
+        }
     });
     let overheated_metadata = overheated_metadata.as_object().unwrap().clone();
     thing.add_available_event("overheated".to_owned(), overheated_metadata);
