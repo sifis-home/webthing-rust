@@ -150,10 +150,11 @@ fn make_thing() -> Arc<RwLock<Box<dyn Thing + 'static>>> {
         "title": "On/Off",
         "type": "boolean",
         "description": "Whether the lamp is turned on",
-        "sifis:hazard": {
-            "@type": "sifis:consumption",
-            "type": "boolean",
-            "const": true,
+        "hazards": {
+            "@id": "sho:ElectricEnergyConsumption",
+            "name": "Electric energy consumption",
+            "description" : "The execution enables a device that consumes electricity",
+            "riskScore": 5,
         }
     });
     let on_description = on_description.as_object().unwrap().clone();
@@ -172,10 +173,11 @@ fn make_thing() -> Arc<RwLock<Box<dyn Thing + 'static>>> {
         "minimum": 0,
         "maximum": 100,
         "unit": "percent",
-        "sifis:hazard": {
-            "@type": "sifis:fire",
-            "type": "integer",
-            "const": { "minimum": 70 }
+        "hazards": {
+            "@id": "sho:FireHazard",
+            "name": "Fire hazard",
+            "description": "The execution may cause fire",
+            "riskScore": 5,
         }
     });
     let brightness_description = brightness_description.as_object().unwrap().clone();
@@ -201,10 +203,11 @@ fn make_thing() -> Arc<RwLock<Box<dyn Thing + 'static>>> {
                     "minimum": 0,
                     "maximum": 100,
                     "unit": "percent",
-                    "sifis:hazard": {
-                        "@type": "sifis:fire",
-                        "type": "integer",
-                        "const": { "minimum": 70 }
+                    "hazards": {
+                        "@id": "sho:FireHazard",
+                        "name": "Fire hazard",
+                        "description": "The execution may cause fire",
+                        "riskScore": 2,
                     }
                 },
                 "duration": {
